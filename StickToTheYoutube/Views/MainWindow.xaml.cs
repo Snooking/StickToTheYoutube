@@ -10,6 +10,7 @@ namespace StickToTheYoutube
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }

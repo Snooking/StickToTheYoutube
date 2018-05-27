@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace YoutubeDownloader.Models
+namespace YoutubeDownloader
 {
-    class Video : IBaseInfo
+    public class Video : IBaseInfo, IVideoInfo
     {
         public string Id { get; }
 
@@ -14,14 +12,30 @@ namespace YoutubeDownloader.Models
 
         public string Description { get; }
 
+        public int Length { get; }
+
+        public string[] KeyWords { get; }
+
+        public DateTime UploadDate { get; }
+
+        public string UploadDate2 { get; }
+
         public Statistics Stats { get; }
 
-        public Video(string id, string title, string author, string description, Statistics stats)
+
+        //public int 
+
+        public Video(string id, string title, string author, string description,
+            string length, string keyWords, string uploadDate, Statistics stats)
         {
             Id = id;
             Title = title;
             Author = author;
-            Description = description;
+            int.TryParse(length, out int tempLength);
+            Length = tempLength;
+            KeyWords = keyWords.Split(',');
+            UploadDate = new DateTime(1997, 12, 11);
+            UploadDate2 = uploadDate;
             Stats = stats;
         }
     }
