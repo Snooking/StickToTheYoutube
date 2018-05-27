@@ -1,6 +1,7 @@
 ﻿namespace YoutubeDownloader
 {
-    public class Class1
+    public class YoutubeDownloader
     {
+
     }
 }
