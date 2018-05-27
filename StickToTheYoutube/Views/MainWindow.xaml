@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:StickToTheYoutube"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <TextBox Text="{Binding VideoUrl}"/>
+        <Button Command="{Binding DownloadRawDataCommand}"
+                Content="Download Raw Data"/>
+        <TextBlock Text="{Binding SearchedVideo.Id}"/>
+        <TextBlock Text="{Binding SearchedVideo.Title}"/>
+        <TextBlock Text="{Binding SearchedVideo.Author}"/>
+        <TextBlock Text="{Binding SearchedVideo.Description}"/>
+    </StackPanel>
 </Window>
